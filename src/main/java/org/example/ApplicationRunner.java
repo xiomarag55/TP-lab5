@@ -7,6 +7,7 @@ import java.util.List;
 import org.example.exception.GradeNotFoundException;
 import org.example.model.Grade;
 import org.example.repository.GradeInMemoryRepositoryImpl;
+import org.example.repository.GradeUsingFileRepositoryImpl;
 import org.example.service.AcademicRecordService;
 import org.example.service.AcademicRecordServiceImpl;
 
@@ -15,7 +16,7 @@ public class ApplicationRunner {
   public static void main(String[] args) {
 
     AcademicRecordService academicRecordService =
-        new AcademicRecordServiceImpl(new GradeInMemoryRepositoryImpl());
+        new AcademicRecordServiceImpl(new GradeUsingFileRepositoryImpl());
 
     //Disclaimer: Este metodo no sigue el principio SOLID de single responsibility
     System.out.println("Notas iniciales");
